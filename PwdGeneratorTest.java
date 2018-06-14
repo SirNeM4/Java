@@ -11,6 +11,7 @@ public class PwdGeneratorTest {
 	ArrayList<Character> excludedListTest= new ArrayList<Character>();
 	String symbolsEx = "";
 	
+	
 	private void setSystemVariables(int size, boolean upperCase, boolean lowerCase, boolean numeric, boolean excluded, boolean symbols, String symbolsExcluded) {
 		pG.size = size;
 		pG.upperCase = upperCase;
