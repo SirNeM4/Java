@@ -126,8 +126,23 @@ public class circulaPrimesTest {
 			if(cP.isPrime(i))
 				cont ++;
 		}
-		
+		cP.printPrimeList();
 		System.out.println("primes number between 1 to 1000000: "+cont);
 	}
 
+	/*
+	@Test
+	public void printCircularNumber1to1M() {
+		int cont = 0;
+		for (int i = 2 ; i <= 100000 ; i++) {
+			if(cP.isCircularP(i))
+				cont ++;
+		}
+		//cP.printCircularList();
+		cP.printPrimeList();
+		System.out.println("primes number between 1 to 1000000: "+cont);
+		cP.primeList.clear();
+		cP.circularPrimeList.clear();
+	}
+*/
 }
