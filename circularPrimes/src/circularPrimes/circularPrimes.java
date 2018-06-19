@@ -4,7 +4,14 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class circularPrimes {
-	
+
+	ArrayList<String> primeList = new ArrayList<>();
+	ArrayList<Character> charNumber = new ArrayList<>();
+	ArrayList<Integer> circularPrimeListTemp = new ArrayList<>();
+	ArrayList<Integer> circularPrimeList = new ArrayList<>();
+	ArrayList<Integer> noRepeat = new ArrayList<>();
+
+	/*	
 	public boolean isPrime2(int number) {
 		return true;
 	}
@@ -24,20 +31,6 @@ public class circularPrimes {
 		
 	}
 
-	private boolean modPrime (int i, int number) {
-		if((number % i) == 0) {
-			return false;
-		}
-		return true;
-	}
-
-	//ArrayList<Integer> primeList = new ArrayList<>();
-	ArrayList<String> primeList = new ArrayList<>();
-	ArrayList<Character> charNumber = new ArrayList<>();
-	ArrayList<Integer> circularPrimeListTemp = new ArrayList<>();
-	ArrayList<Integer> circularPrimeList = new ArrayList<>();
-	ArrayList<Integer> noRepeat = new ArrayList<>();
-	
 
 	public boolean isPrime123(int number) {
 		int cont = 0;
@@ -62,6 +55,15 @@ public class circularPrimes {
 		return false; 
 	}
 	
+	*/
+	
+	private boolean modPrime (int i, int number) {
+		if((number % i) == 0) {
+			return false;
+		}
+		return true;
+	}
+	
 	public boolean isPrime(int number) {
 		int cont = 0;
 		int i = 2;
@@ -73,7 +75,7 @@ public class circularPrimes {
 		else if((number % 2 == 0 || number % 5 == 0 || number % 3 == 0))
 			return false;
 		
-		while(cont < 1 && i < (number/2)) {
+		while(cont < 1 && i < (number/6)) {
 			if(!modPrime(i, number)){
 				cont++;
 			}
@@ -140,7 +142,6 @@ public class circularPrimes {
 		return false;
 	}
 
-	
 	public void printCircularList() {
 		noRepeat = (ArrayList<Integer>) circularPrimeList.stream().distinct().collect(Collectors.toList());
 		for(int i = 0; i < noRepeat.size(); i++) {
