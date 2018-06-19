@@ -101,7 +101,7 @@ public class circularPrimes {
 		}
 		
 		for(int i = 0; i < charNumber.size(); i++) {
-			if((i+1) < charNumber.size())
+			if((i+1) < charNumber.size()) 
 				sb.append(charNumber.get(i+1));
 			else
 				sb.append(charNumber.get(0));
@@ -122,19 +122,22 @@ public class circularPrimes {
 		int numberNew = number;
 		if (isPrime(number)){
 			while(String.valueOf(number).length()> i) {
+
+				if (circularPrimeListTemp.contains(4)) {
+					circularPrimeListTemp.clear();
+					return false;
+				}
+				
 				if(number < 18) {
 					circularPrimeList.add(number);
 				}
 				else if(String.valueOf(number).length()>1) {				
 					numberNew = rotateNumber(numberNew);
 				}
+				
 				i++;
 			}
-			if (circularPrimeListTemp.contains(4)) {
-				circularPrimeListTemp.clear();
-				return false;
-			}
-			
+
 			circularPrimeList.add(number);
 			circularPrimeListTemp.clear();
 			return true;
