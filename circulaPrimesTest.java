@@ -11,7 +11,7 @@ public class circulaPrimesTest {
 	public void setUp() {
 		cP = new circularPrimes();
 	}
-	
+
 	@Test
 	public void isACircularPrime_2() {
 		Assert.assertEquals(true, cP.isACircularPrime(2));
@@ -114,15 +114,20 @@ public class circulaPrimesTest {
 	}
 	
 	@Test
+	public void isACircularPrime_49() {
+		Assert.assertEquals(false, cP.isACircularPrime(49));
+	}
+	
+
+	@Test
 	public void printPrimeNumber1to1M() {
 		int cont = 0;
 		for (int i = 2 ; i <= 1000000 ; i++) {
 			if(cP.isACircularPrime(i))
 				cont ++;
 		}
-		System.out.println("----");
+		
 		System.out.println("primes number between 1 to 1000000: "+cont);
-		System.out.println("----");
 	}
 
 }

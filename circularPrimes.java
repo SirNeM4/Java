@@ -30,11 +30,13 @@ public class circularPrimes {
 
 	ArrayList<Integer> primeList = new ArrayList<>();
 
-	public boolean isACircularPrime_9(int number) {
+	public boolean isACircularPrime123(int number) {
 		int cont = 0;
 		
-		if(number == 2 || number == 5 || number == 3)
+		if(number == 2 || number == 5 || number == 3) {
+			System.out.println(number);
 			return true;
+		}
 		else if((number % 2 == 0 || number % 5 == 0 || number % 3 == 0))
 			return false;
 		
@@ -55,21 +57,27 @@ public class circularPrimes {
 		int cont = 0;
 		int i = 2;
 		
-		if(number == 2 || number == 5 || number == 3)
-			return true;
-		else if((number % 2 == 0 || number % 5 == 0 || number % 3 == 0))
-			return false;
-		
-		while(cont < 1 || i < number) {
-			if(!modPrime(i, number)){
-				cont++;
-			}
+		if(number == 2 || number == 5 || number == 3) {
 			System.out.println(number);
 			return true;
 		}
+		else if((number % 2 == 0 || number % 5 == 0 || number % 3 == 0))
+			return false;
 		
+		while(cont < 1 && i < number) {
+			if(!modPrime(i, number)){
+				cont++;
+			}
+			i++;
+		}
+		
+		if (cont < 1) {
+			System.out.println(number);
+			primeList.add(number);
+			return true;
+		}
 		return false; 
 	}
-	
+
 }
 
