@@ -13,117 +13,117 @@ public class circulaPrimesTest {
 	}
 
 	@Test
-	public void isACircularPrime_2() {
-		Assert.assertEquals(true, cP.isACircularPrime(2));
+	public void isPrime_2() {
+		Assert.assertEquals(true, cP.isPrime(2));
 	}
 
 	
 	@Test
-	public void isACircularPrime_3() {
-		Assert.assertEquals(true, cP.isACircularPrime(3));
+	public void isPrime_3() {
+		Assert.assertEquals(true, cP.isPrime(3));
 	}
 
 	
 	@Test
-	public void isACircularPrime_4() {
-		Assert.assertEquals(false, cP.isACircularPrime(4));
+	public void isPrime_4() {
+		Assert.assertEquals(false, cP.isPrime(4));
 	}
 
 	@Test
-	public void isACircularPrime_5() {
-		Assert.assertEquals(true, cP.isACircularPrime(5));
+	public void isPrime_5() {
+		Assert.assertEquals(true, cP.isPrime(5));
 	}
 
 	@Test
-	public void isACircularPrime_6() {
-		Assert.assertEquals(false, cP.isACircularPrime(6));
+	public void isPrime_6() {
+		Assert.assertEquals(false, cP.isPrime(6));
 	}
 
 	@Test
-	public void isACircularPrime_7() {
-		Assert.assertEquals(true, cP.isACircularPrime(7));
+	public void isPrime_7() {
+		Assert.assertEquals(true, cP.isPrime(7));
 	}
 
 	@Test
-	public void isACircularPrime_8() {
-		Assert.assertEquals(false, cP.isACircularPrime(8));
+	public void isPrime_8() {
+		Assert.assertEquals(false, cP.isPrime(8));
 	}
 
 	
 	@Test
-	public void isACircularPrime_9() {
-		Assert.assertEquals(false, cP.isACircularPrime(9));
+	public void isPrime_9() {
+		Assert.assertEquals(false, cP.isPrime(9));
 	}
 
 	@Test
-	public void isACircularPrime_10() {
-		Assert.assertEquals(false, cP.isACircularPrime(10));
+	public void isPrime_10() {
+		Assert.assertEquals(false, cP.isPrime(10));
 	}
 	
 	@Test
-	public void isACircularPrime_11() {
-		Assert.assertEquals(true, cP.isACircularPrime(11));
+	public void isPrime_11() {
+		Assert.assertEquals(true, cP.isPrime(11));
 	}
 
 	@Test
 	public void primes11to25() {
-		Assert.assertEquals(true, cP.isACircularPrime(2));
-		Assert.assertEquals(true, cP.isACircularPrime(3));
-		Assert.assertEquals(true, cP.isACircularPrime(5));
-		Assert.assertEquals(true, cP.isACircularPrime(7));
-		Assert.assertEquals(true, cP.isACircularPrime(11));
-		Assert.assertEquals(true, cP.isACircularPrime(13));
-		Assert.assertEquals(true, cP.isACircularPrime(17));
-		Assert.assertEquals(true, cP.isACircularPrime(19));
-		Assert.assertEquals(true, cP.isACircularPrime(23));
-		Assert.assertEquals(true, cP.isACircularPrime(29));
-		Assert.assertEquals(true, cP.isACircularPrime(31));
-		Assert.assertEquals(true, cP.isACircularPrime(37));
-		Assert.assertEquals(true, cP.isACircularPrime(41));
-		Assert.assertEquals(true, cP.isACircularPrime(43));
-		Assert.assertEquals(true, cP.isACircularPrime(47));
-		Assert.assertEquals(true, cP.isACircularPrime(53));
-		Assert.assertEquals(true, cP.isACircularPrime(59));
-		Assert.assertEquals(true, cP.isACircularPrime(61));
-		Assert.assertEquals(true, cP.isACircularPrime(67));
-		Assert.assertEquals(true, cP.isACircularPrime(71));
-		Assert.assertEquals(true, cP.isACircularPrime(73));
-		Assert.assertEquals(true, cP.isACircularPrime(79));		
-		Assert.assertEquals(true, cP.isACircularPrime(83));
-		Assert.assertEquals(true, cP.isACircularPrime(89));
-		Assert.assertEquals(true, cP.isACircularPrime(97));
+		Assert.assertEquals(true, cP.isPrime(2));
+		Assert.assertEquals(true, cP.isPrime(3));
+		Assert.assertEquals(true, cP.isPrime(5));
+		Assert.assertEquals(true, cP.isPrime(7));
+		Assert.assertEquals(true, cP.isPrime(11));
+		Assert.assertEquals(true, cP.isPrime(13));
+		Assert.assertEquals(true, cP.isPrime(17));
+		Assert.assertEquals(true, cP.isPrime(19));
+		Assert.assertEquals(true, cP.isPrime(23));
+		Assert.assertEquals(true, cP.isPrime(29));
+		Assert.assertEquals(true, cP.isPrime(31));
+		Assert.assertEquals(true, cP.isPrime(37));
+		Assert.assertEquals(true, cP.isPrime(41));
+		Assert.assertEquals(true, cP.isPrime(43));
+		Assert.assertEquals(true, cP.isPrime(47));
+		Assert.assertEquals(true, cP.isPrime(53));
+		Assert.assertEquals(true, cP.isPrime(59));
+		Assert.assertEquals(true, cP.isPrime(61));
+		Assert.assertEquals(true, cP.isPrime(67));
+		Assert.assertEquals(true, cP.isPrime(71));
+		Assert.assertEquals(true, cP.isPrime(73));
+		Assert.assertEquals(true, cP.isPrime(79));		
+		Assert.assertEquals(true, cP.isPrime(83));
+		Assert.assertEquals(true, cP.isPrime(89));
+		Assert.assertEquals(true, cP.isPrime(97));
 	}
 	
 	@Test
 	public void noPrimerNumbers() {
-		Assert.assertEquals(false, cP.isACircularPrime(4));
-		Assert.assertEquals(false, cP.isACircularPrime(6));
-		Assert.assertEquals(false, cP.isACircularPrime(8));
-		Assert.assertEquals(false, cP.isACircularPrime(9));
-		Assert.assertEquals(false, cP.isACircularPrime(14));
-		Assert.assertEquals(false, cP.isACircularPrime(15));
-		Assert.assertEquals(false, cP.isACircularPrime(16));
-		Assert.assertEquals(false, cP.isACircularPrime(22));
-		Assert.assertEquals(false, cP.isACircularPrime(30));
-		Assert.assertEquals(false, cP.isACircularPrime(35));
-		Assert.assertEquals(false, cP.isACircularPrime(38));
-		Assert.assertEquals(false, cP.isACircularPrime(42));
-		Assert.assertEquals(false, cP.isACircularPrime(44));
-		Assert.assertEquals(false, cP.isACircularPrime(100));
+		Assert.assertEquals(false, cP.isPrime(4));
+		Assert.assertEquals(false, cP.isPrime(6));
+		Assert.assertEquals(false, cP.isPrime(8));
+		Assert.assertEquals(false, cP.isPrime(9));
+		Assert.assertEquals(false, cP.isPrime(14));
+		Assert.assertEquals(false, cP.isPrime(15));
+		Assert.assertEquals(false, cP.isPrime(16));
+		Assert.assertEquals(false, cP.isPrime(22));
+		Assert.assertEquals(false, cP.isPrime(30));
+		Assert.assertEquals(false, cP.isPrime(35));
+		Assert.assertEquals(false, cP.isPrime(38));
+		Assert.assertEquals(false, cP.isPrime(42));
+		Assert.assertEquals(false, cP.isPrime(44));
+		Assert.assertEquals(false, cP.isPrime(100));
 
 	}
 	
 	@Test
-	public void isACircularPrime_49() {
-		Assert.assertEquals(false, cP.isACircularPrime(49));
+	public void isPrime_49() {
+		Assert.assertEquals(false, cP.isPrime(49));
 	}
 	
 
 	@Test
 	public void printPrimeNumber1to1M() {
 		int cont = 0;
-		for (int i = 2 ; i <= 1000000 ; i++) {
-			if(cP.isACircularPrime(i))
+		for (int i = 2 ; i <= 100000 ; i++) {
+			if(cP.isPrime(i))
 				cont ++;
 		}
 		

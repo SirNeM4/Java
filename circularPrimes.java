@@ -2,17 +2,17 @@ import java.util.ArrayList;
 
 public class circularPrimes {
 	
-	public boolean isACircularPrime2(int number) {
+	public boolean isPrime2(int number) {
 		return true;
 	}
 
-	public boolean isACircularPrime_4(int number) {
+	public boolean isPrime_4(int number) {
 		if(number == 4)
 			return false;
 		return true;
 	}
 	
-	public boolean isACircularPrime_7(int number) {
+	public boolean isPrime_7(int number) {
 		if(number == 4)
 			return false;
 		else if (number == 6)
@@ -30,7 +30,7 @@ public class circularPrimes {
 
 	ArrayList<Integer> primeList = new ArrayList<>();
 
-	public boolean isACircularPrime123(int number) {
+	public boolean isPrime123(int number) {
 		int cont = 0;
 		
 		if(number == 2 || number == 5 || number == 3) {
@@ -53,7 +53,7 @@ public class circularPrimes {
 		return false; 
 	}
 	
-	public boolean isACircularPrime(int number) {
+	public boolean isPrime(int number) {
 		int cont = 0;
 		int i = 2;
 		
