@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class circularPrimes {
 	
@@ -31,7 +32,9 @@ public class circularPrimes {
 	//ArrayList<Integer> primeList = new ArrayList<>();
 	ArrayList<String> primeList = new ArrayList<>();
 	ArrayList<Character> charNumber = new ArrayList<>();
+	ArrayList<Integer> circularPrimeListTemp = new ArrayList<>();
 	ArrayList<Integer> circularPrimeList = new ArrayList<>();
+	ArrayList<Integer> noRepeat = new ArrayList<>();
 	
 
 	public boolean isPrime123(int number) {
@@ -57,28 +60,6 @@ public class circularPrimes {
 		return false; 
 	}
 	
-	private int rotateNumber(int number) {
-		String numberX = String.valueOf(number);
-		StringBuilder sb = new StringBuilder();
-
-		for(int i = 0; i < numberX.length(); i++ ) {
-			charNumber.add(numberX.charAt(i));
-		}
-		
-		for(int i = 0; i < charNumber.size(); i++) {
-			if((i+1) < charNumber.size())
-				sb.append(charNumber.get(i+1));
-			else
-				sb.append(charNumber.get(0));
-		}
-		
-		if(isPrime(Integer.parseInt(sb.toString())))
-			circularPrimeList.add(number);
-
-		charNumber.clear();
-		return Integer.parseInt(sb.toString());
-	}
-	
 	public boolean isPrime(int number) {
 		int cont = 0;
 		int i = 2;
@@ -90,7 +71,7 @@ public class circularPrimes {
 		else if((number % 2 == 0 || number % 5 == 0 || number % 3 == 0))
 			return false;
 		
-		while(cont < 1 && i < number) {
+		while(cont < 1 && i < (number/2)) {
 			if(!modPrime(i, number)){
 				cont++;
 			}
@@ -104,39 +85,67 @@ public class circularPrimes {
 		return false; 
 	}
 	
-	private void addToCircularPrimeList(int number) {
-		for(int i=0; i < primeList.size(); i++) {
-			if(Integer.parseInt(primeList.get(i)) == number){
-				circularPrimeList.add(number);
+	private int rotateNumber(int number) {
+		String numberX = String.valueOf(number);
+		StringBuilder sb = new StringBuilder();
+
+		for(int i = 0; i < numberX.length(); i++ ) {
+			charNumber.add(numberX.charAt(i));
+			if(numberX.charAt(i) % 2 == 0) {
+				circularPrimeListTemp.add(4);
 			}
 		}
+		
+		for(int i = 0; i < charNumber.size(); i++) {
+			if((i+1) < charNumber.size())
+				sb.append(charNumber.get(i+1));
+			else
+				sb.append(charNumber.get(0));
+		}
+		
+		if(isPrime(Integer.parseInt(sb.toString())) && isPrime(number)) {
+			circularPrimeListTemp.add(Integer.parseInt(sb.toString()));
+		}else {
+			circularPrimeListTemp.add(4);
+		}
+
+		charNumber.clear();
+		return Integer.parseInt(sb.toString());
 	}
-	
+
 	public boolean isCircularP(int number) {
 		int i = 0;
 		int numberNew = number;
 		if (isPrime(number)){
-			
-			while(String.valueOf(number).length()>= i) {
-				if(number < 19)
-					addToCircularPrimeList(number);
-								
-				numberNew = rotateNumber(numberNew);
+			while(String.valueOf(number).length()> i) {
+				if(number < 18) {
+					circularPrimeList.add(number);
+				}
+				else if(String.valueOf(number).length()>1) {				
+					numberNew = rotateNumber(numberNew);
+				}
 				i++;
-				return true;
-				
+			}
+			if (circularPrimeListTemp.contains(4)) {
+				circularPrimeListTemp.clear();
+				return false;
 			}
 			
+			circularPrimeList.add(number);
+			circularPrimeListTemp.clear();
+			return true;
 		}
 		return false;
 	}
+
 	
 	public void printCircularList() {
-		for(int i = 0; i < circularPrimeList.size(); i++) {
-			System.out.println(circularPrimeList.get(i));
+		noRepeat = (ArrayList<Integer>) circularPrimeList.stream().distinct().collect(Collectors.toList());
+		for(int i = 0; i < noRepeat.size(); i++) {
+			System.out.println(noRepeat.get(i));
 		}
 	}
-	
+
 	public void printPrimeList() {
 		for(int i = 0; i < primeList.size(); i++) {
 			System.out.println(primeList.get(i));
@@ -144,4 +153,5 @@ public class circularPrimes {
 	}
 
 }
+
 
